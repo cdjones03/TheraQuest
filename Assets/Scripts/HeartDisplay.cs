@@ -6,7 +6,6 @@ public class HeartDisplay : MonoBehaviour
     [SerializeField] public GameObject heartTwo;    
     [SerializeField] public GameObject heartThree;
     [SerializeField] public GameObject heartFour;
-    public bool one, two, three, four = false;
 
    
     void Start()
@@ -21,26 +20,29 @@ public class HeartDisplay : MonoBehaviour
     void Update()
     {
         //only one heart is active
-        if (one)
+        if (TherapistCounter.totalVisits == 1)
         {
             heartOne.SetActive(true);
         }
         //two hearts are active
-        if (two)
+        if (TherapistCounter.totalVisits == 2)
         {
-            one = false;
+            heartOne.SetActive(true); 
             heartTwo.SetActive(true);
         }
         //three hearts are active
-        if (three)
+        if (TherapistCounter.totalVisits == 3)
         {
-            two = false;
+            heartOne.SetActive(true);
+            heartTwo.SetActive(true); 
             heartThree.SetActive(true);
         }
         //four hearts are active
-        if (four)
+        if (TherapistCounter.totalVisits == 4)
         {
-            three = false;
+            heartOne.SetActive(true);
+            heartTwo.SetActive(true);
+            heartThree.SetActive(true); 
             heartFour.SetActive(true);
         }
     }

@@ -6,11 +6,13 @@ public class TherapistCounter : MonoBehaviour
 {
     //static = accessible from any script)
     public static int totalVisits = 0;
+    public TherapyCountUI ui;
 
     void Awake()
     {
         //Make Collider2D as trigger 
         GetComponent<Collider2D>().isTrigger = true;
+        //declare type?? findobjectoftype? so confused
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -21,6 +23,7 @@ public class TherapistCounter : MonoBehaviour
             //Add visit to counter
             totalVisits++;
             Debug.Log("You have seen " + TherapistCounter.totalVisits + " providers.");
+            ui.UpdateText(); 
             Loading();
         }
     }
@@ -29,6 +32,7 @@ public class TherapistCounter : MonoBehaviour
     {
         // SET CHECKPOINT FLAG
         // LOAD NEXT SCENE
+
         this.enabled = false;
     }
 }
