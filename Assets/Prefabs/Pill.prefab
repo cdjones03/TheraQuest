@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 5781570647369487150}
   - component: {fileID: 1402071484014550824}
   - component: {fileID: 2338709612079477443}
+  - component: {fileID: 380867077885001600}
   m_Layer: 0
   m_Name: Pill
   m_TagString: Untagged
@@ -103,3 +104,15 @@ MonoBehaviour:
   baseSprite: {fileID: 5088316998373936774, guid: c2298e3e50d673347beee2d892086bb3, type: 3}
   glowSprite: {fileID: 5088316998373936774, guid: 36ca8117b9f3ec8408087db7bdda8e23, type: 3}
   clickedSprite: {fileID: 5088316998373936774, guid: 97215001b387ff34686d9d8bd109f768, type: 3}
+--- !u!114 &380867077885001600
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2882990446516755749}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d50c6af235894f94f8ca8f132fc3076e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 

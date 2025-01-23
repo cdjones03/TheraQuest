@@ -6,7 +6,7 @@ public class HeartDisplay : MonoBehaviour
     [SerializeField] public GameObject heartTwo;    
     [SerializeField] public GameObject heartThree;
     [SerializeField] public GameObject heartFour;
-    private bool one, two, three, four = false;
+    public bool one, two, three, four = false;
 
    
     void Start()

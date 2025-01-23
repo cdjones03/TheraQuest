@@ -2,7 +2,7 @@ using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Pill : MonoBehaviour
+public class PillSprite : MonoBehaviour
 {
     [SerializeField] public Sprite baseSprite;
     [SerializeField] public Sprite glowSprite;
@@ -31,7 +31,6 @@ public class Pill : MonoBehaviour
             baseSpr.enabled = false;
             glowSpr.enabled = false;
             clickSpr.enabled = true;
-            Destroy(this);
         }
     }
 }
