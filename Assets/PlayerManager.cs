@@ -4,27 +4,21 @@ using UnityEngine.UI;
 
 public class PlayerManager : MonoBehaviour
 {
-    public int curMoodValue;
-    public int maxMoodValue;
-
     public int curCoins;
+    public int curMoodValue;
     public int income;
-
-    public TextMeshProUGUI curCoinsText;
-    public Slider moodSlider;
+    public int maxMoodValue = 100;
 
     private float moodTimer = 0f;
     private float moodDecreaseInterval = 10f;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    //UpdateUI updateUI;
+
     void Start()
     {
         curCoins = 0;
-        curCoinsText.text = curCoins.ToString();
-
-        maxMoodValue = 10;
         curMoodValue = maxMoodValue;
-        moodSlider.value = curMoodValue;
+        //updateUI = FindFirstObjectByType<UpdateUI>();
     }
 
     // Update is called once per frame
@@ -34,9 +28,9 @@ public class PlayerManager : MonoBehaviour
         moodTimer += Time.deltaTime;
         if (moodTimer >= moodDecreaseInterval)
         {
-            moodTimer = 0f;  // Reset timer
-            AddMood(-1);     // Decrease mood by 1
-            moodSlider.value = curMoodValue;  // Update the slider
+            moodTimer = 0f;                                     // Reset timer
+            AddMood(-1);                                        // Decrease mood by 1
+            //updateUI.moodText.text = curMoodValue.ToString(); // Update UI
         }
     }
 
@@ -47,15 +41,16 @@ public class PlayerManager : MonoBehaviour
         {
             curMoodValue = maxMoodValue;
         }
-        else if (curMoodValue < 0)  // Added to prevent negative mood
+        else if (curMoodValue < 0)                              // Added to prevent negative mood
         {
             curMoodValue = 0;
         }
-        moodSlider.value = curMoodValue;  // Update slider whenever mood changes
+        //updateUI.moodText.text = curMoodValue.ToString();     // Update UI whenever mood changes
     }
 
-    public void AddCoin(){
-        curCoins += 1;
-        curCoinsText.text = curCoins.ToString();
+    public void AddCoin()
+    {
+        curCoins ++;
+        //updateUI.coinText.text = curCoins.ToString();         // Update UI
     }
 }
