@@ -8,6 +8,7 @@ public class CoinCollider : MonoBehaviour
         {
             other.gameObject.GetComponent<PlayerManager>().AddCoin();
             Destroy(gameObject);
+            Debug.Log("Coin collected!");
         }
     }
 }

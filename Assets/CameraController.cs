@@ -22,8 +22,8 @@ public class CameraController : MonoBehaviour
         if (player != null)
         {
             // Create target position with fixed X and player's Y
-            Vector3 targetPosition = new Vector3(startingX, player.position.y, transform.position.z);
-            
+            //Vector3 targetPosition = new Vector3(startingX, player.position.y, transform.position.z);
+            Vector3 targetPosition = new Vector3(player.position.x, player.position.y, transform.position.z);
             // Smoothly interpolate between current position and target position
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);
         }
