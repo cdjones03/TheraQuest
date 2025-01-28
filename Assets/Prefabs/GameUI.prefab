@@ -995,6 +995,7 @@ MonoBehaviour:
   moodUI: {fileID: 7258305468852214751}
   coinUI: {fileID: 5960315528690118135}
   heart: {fileID: 8348747743818330257}
+  player: {fileID: 0}
   stableThreshold: 85
   hurtThreshold: 60
   lowThreshold: 30
