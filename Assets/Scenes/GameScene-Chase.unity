@@ -1412,7 +1412,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   curCoins: 0
   curMoodValue: 100
-  income: 2
   income: 0
   maxMoodValue: 100
   lastPosition: {x: 0, y: 0, z: 0}
