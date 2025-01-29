@@ -56,9 +56,19 @@ public class PlayerManager : MonoBehaviour
         //updateUI.coinText.text = curCoins.ToString();         // Update UI
     }
 
+    public void SubtractCoin(int amount)
+    {
+        curCoins -= amount;
+    }
+
     public void SetLastPosition(Vector3 position)
     {
         lastPosition = position;
+    }
+
+    public int getCurCoins()
+    {
+        return curCoins;
     }
 
      void OnTriggerEnter2D(Collider2D other)

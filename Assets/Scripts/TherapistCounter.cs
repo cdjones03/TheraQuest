@@ -4,8 +4,12 @@ using UnityEngine;
 
 public class TherapistCounter : MonoBehaviour
 {
+
+    [SerializeField] private GameObject player;
     //static = accessible from any script)
     public static int totalVisits = 0;
+
+    public int copayValue;
     public TherapyCountUI ui;
 
     void Awake()
@@ -15,10 +19,18 @@ public class TherapistCounter : MonoBehaviour
         //declare type?? findobjectoftype? so confused
     }
 
+    void Start()
+    {
+        player = GameObject.FindGameObjectWithTag("Player");
+        copayValue = 3;
+    }
+
     void OnTriggerEnter2D(Collider2D other)
     {
+        int curCoins = player.GetComponent<PlayerManager>().getCurCoins();
+
         //Destroy the coin if Object tagged Player comes in contact with it
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && curCoins >= copayValue)
         {
             //Add visit to counter
             totalVisits++;

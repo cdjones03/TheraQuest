@@ -20,6 +20,8 @@ public class PlayerTeleport : MonoBehaviour
 
     public static int roomOrder = 0;
 
+    public int copayValue;
+
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
@@ -35,6 +37,8 @@ public class PlayerTeleport : MonoBehaviour
         playerY = player.transform.position.y;
         therapistX = 0;
         therapistY = 0;
+
+        copayValue = 3;
 
         reshuffle(therapyRooms);
     }
@@ -55,12 +59,15 @@ public class PlayerTeleport : MonoBehaviour
     void OnTriggerEnter2D(Collider2D other)
     {
         int rand = UnityEngine.Random.Range(0, 4);
+        int curCoins = player.GetComponent<PlayerManager>().getCurCoins();
         // ReSharper disable once InvertIf
-        if (other.gameObject.CompareTag("Player"))
+        if (other.gameObject.CompareTag("Player") && curCoins >= copayValue)
         {
+            player.GetComponent<PlayerManager>().SubtractCoin(copayValue);
+
             therapistX = transform.position.x;
             therapistY = transform.position.y;
-            playerX = player.transform.position.x;
+            playerX = player.transform.position.x;  
             playerY = player.transform.position.y;
             //runs through the array in order (0-4)
             //but since the value is randomized, it should still work without duplicates
