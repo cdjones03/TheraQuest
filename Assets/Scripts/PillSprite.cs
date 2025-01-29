@@ -1,12 +1,13 @@
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.Sprites;
+using Unity.VisualScripting;
 
 public class PillSprite : MonoBehaviour
 {
-    [SerializeField] public Sprite baseSprite;
-    [SerializeField] public Sprite glowSprite;
-    [SerializeField] public Sprite clickedSprite;
+    [SerializeField] public GameObject baseSprite;
+    [SerializeField] public GameObject glowSprite;
+    [SerializeField] public GameObject clickedSprite;
     private SpriteRenderer baseSpr, glowSpr, clickSpr;
 
     void Start()

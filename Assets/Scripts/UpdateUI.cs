@@ -20,7 +20,13 @@ public class UpdateUI : MonoBehaviour
     public int lowThreshold = 30;
     public int emptyThreshold = 15;
     #endregion
-
+ // this is a duplicate of the first few lines of update because unity would throw a fit otherwise
+    private void Awake()
+    {
+        coinText.text = manager.curCoins.ToString();
+        moodText.text = manager.curMoodValue.ToString();
+        animator.SetFloat("mood", manager.curMoodValue);
+    }
     void Start()
     {
         moodText = moodUI.GetComponent<TextMeshPro>();
@@ -38,13 +44,7 @@ public class UpdateUI : MonoBehaviour
         animator.SetBool("empty", false);
     }
 
-    // this is a duplicate of the first few lines of update because unity would throw a fit otherwise
-    private void Awake()
-    {
-        coinText.text = manager.curCoins.ToString();
-        moodText.text = manager.curMoodValue.ToString();
-        animator.SetFloat("mood", manager.curMoodValue);
-    }
+   
 
     private void Update()
     {

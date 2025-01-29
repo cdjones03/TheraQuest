@@ -3,6 +3,7 @@ using System;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
+using Random = UnityEngine.Random;
 
 public class PlayerTeleport : MonoBehaviour
 {
@@ -15,7 +16,9 @@ public class PlayerTeleport : MonoBehaviour
     private float playerY;
     private float therapistX;
     private float therapistY;
-    private Transform position;
+    private Transform pillPosition;
+
+    public int roomOrder = 0;
 
     void Start()
     {
@@ -27,11 +30,26 @@ public class PlayerTeleport : MonoBehaviour
         
         GetComponent<Collider2D>().isTrigger = true;
         
-        position = this.gameObject.transform;
+        pillPosition = this.gameObject.transform;
         playerX = player.transform.position.x;
         playerY = player.transform.position.y;
         therapistX = 0;
         therapistY = 0;
+
+        reshuffle(therapyRooms);
+    }
+
+    void reshuffle(GameObject[] rooms)
+    {
+        // Knuth shuffle algorithm :: courtesy of Wikipedia :)
+        // reorganizes array randomly (we hope)
+        for (int t = 0; t < rooms.Length; t++)
+        {
+            GameObject tmp = rooms[t];
+            int r = Random.Range(t, rooms.Length);
+            rooms[t] = rooms[r];
+            rooms[r] = tmp;
+        }
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -44,14 +62,19 @@ public class PlayerTeleport : MonoBehaviour
             therapistY = transform.position.y;
             playerX = player.transform.position.x;
             playerY = player.transform.position.y;
-            player.transform.position = theraSpawnPoint[rand].transform.position;
+            //runs through the array in order (0-4)
+            //but since the value is randomized, it should still work without duplicates
+            player.transform.position = theraSpawnPoint[roomOrder].transform.position;
             Debug.Log("firing teleport");
-            //do we want destroy.gameobject here?
         }
 
+        // would we need a script on the player for this...?? 
         if (other.gameObject.CompareTag("Door"))
         {
             Reset(true);
+            player.transform.position = pillPosition.transform.position;
+            roomOrder += 1;
+            Destroy(this);
         }
     }
 
