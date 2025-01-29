@@ -198,7 +198,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      noun-mental-health-4450865_0: -7921619345821297704
+      noun-mental-health-4450865_1: 4614179885702955858
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
