@@ -24,10 +24,11 @@ public class UpdateUI : MonoBehaviour
     private void Awake()
     {
         
-        //coinText.text = manager.curCoins.ToString();
-        //moodText.text = manager.curMoodValue.ToString();
-        //animator.SetFloat("mood", manager.curMoodValue);
-        
+        coinText.text = manager.curCoins.ToString();
+        moodText.text = manager.curMoodValue.ToString();
+        animator.SetFloat("mood", manager.curMoodValue);
+        animator.SetBool("stable", true);
+
     }
     void Start()
     {

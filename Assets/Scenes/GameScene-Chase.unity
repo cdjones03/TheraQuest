@@ -1273,9 +1273,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   curCoins: 0
-  curMoodValue: 0
+  curMoodValue: 100
   income: 0
-  maxMoodValue: 0
+  maxMoodValue: 100
   lastPosition: {x: 0, y: 0, z: 0}
 --- !u!114 &75251002
 MonoBehaviour:
@@ -11379,6 +11379,10 @@ PrefabInstance:
     - target: {fileID: 8145582600603834035, guid: bdcad76d882c3834dae79cad1b685397, type: 3}
       propertyPath: m_Name
       value: GameUI (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8164584902617284797, guid: bdcad76d882c3834dae79cad1b685397, type: 3}
+      propertyPath: m_SizeDelta.x
+      value: 180
       objectReference: {fileID: 0}
     - target: {fileID: 8164584902617284797, guid: bdcad76d882c3834dae79cad1b685397, type: 3}
       propertyPath: m_AnchoredPosition.x
