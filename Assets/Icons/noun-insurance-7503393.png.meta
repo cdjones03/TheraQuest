@@ -49,7 +49,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -167,7 +167,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 12f65ce98e4f4834b93717e36820d742
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -178,7 +178,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       noun-insurance-7503393_0: 7562896938815748449
-      noun-insurance-7503393_1: -3567168399893680728
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

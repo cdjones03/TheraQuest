@@ -58,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -176,7 +176,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: ef66f060a878b6f4ea1b01250b676494
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -187,11 +187,6 @@ TextureImporter:
       entries: []
     nameFileIdTable:
       noun-depression-4311063_0: 1616933126472708466
-      noun-depression-4311063_1: -6410953126142788700
-      noun-depression-4311063_2: 7884891107374601402
-      noun-depression-4311063_3: 6569160763922458751
-      noun-depression-4311063_4: 1077055072205965731
-      noun-depression-4311063_5: -415772238
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -18,7 +18,7 @@ public class TextScroller : MonoBehaviour
         canvasWidth = canvasRect.rect.width;
         
         // Start at the left edge of the canvas (0), offset by index
-        float startX = 500 - (textWidth + spacing) + (spacing * textIndex);
+        float startX = 300 - (textWidth + spacing) + (spacing * textIndex);
         startPosition = new Vector2(startX, textRectTransform.anchoredPosition.y);
         textRectTransform.anchoredPosition = startPosition;
     }

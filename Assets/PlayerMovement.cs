@@ -6,6 +6,7 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField] private float jumpForce = 10f;
     [SerializeField] private float wallJumpForce = 12f; // Force for wall jumping
     [SerializeField] private float wallSlideSpeed = 2f; // Speed when sliding down walls
+    [SerializeField] private float tolerance = .1f; // Tolerance for position checks
     
     private Rigidbody2D rb;
     public bool isGrounded;
@@ -18,42 +19,59 @@ public class PlayerMovement : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    private bool IsOnTopOfWall()
+    {
+        // Check if we're touching a wall and our y velocity is approximately 0 (standing)
+        if (isTouchingWall && Mathf.Abs(rb.linearVelocity.y) < tolerance)
+        {
+            
+            // Check slightly below the player's position
+            Vector2 checkPosition = transform.position + Vector3.down * 0.5f;
+            Collider2D[] colliders = Physics2D.OverlapCircleAll(checkPosition, tolerance);
+            
+            foreach (Collider2D collider in colliders)
+            {
+                if (collider.CompareTag("Wall"))
+                {
+                    // Check if we're above the wall by comparing y positions
+                    float playerBottom = transform.position.y - GetComponent<Collider2D>().bounds.extents.y;
+                    float wallTop = collider.bounds.max.y;
+                    
+                    bool isOnTop = Mathf.Abs(playerBottom - wallTop) < tolerance;
+                    return isOnTop;
+                }
+            }
+        }
+        return false;
+    }
+
     void Update()
     {
         float moveInput = Input.GetAxisRaw("Horizontal");
+        
+        // Check if player has zero vertical velocity (standing still)
+        if (Mathf.Abs(rb.linearVelocity.y) < tolerance)
+        {
+            isGrounded = true;
+        }
         
         // Handle wall sliding
         if (isTouchingWall && !isGrounded && moveInput * wallDirection > 0)
         {
             isWallSliding = true;
-            Debug.Log($"Wall Sliding: Direction={wallDirection}, MoveInput={moveInput}");
             rb.linearVelocity = new Vector2(0f, Mathf.Max(rb.linearVelocity.y, -wallSlideSpeed));
         }
         else
         {
             isWallSliding = false;
-            // Only apply normal movement when not wall sliding
             rb.linearVelocity = new Vector2(moveInput * moveSpeed, rb.linearVelocity.y);
         }
 
-        // Handle jumping (both ground and wall)
-        if (Input.GetButtonDown("Jump"))
+        // Handle jumping
+        if (Input.GetButtonDown("Jump") && isGrounded)
         {
-            Debug.Log($"Jump pressed - IsGrounded: {isGrounded}, IsWallSliding: {isWallSliding}, IsTouchingWall: {isTouchingWall}");
-            if (isGrounded)
-            {
-                rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
-                isGrounded = false;
-            }
-            else if (isWallSliding)
-            {
-                Debug.Log("Attempting wall jump!");
-                // Wall jump: Push up and away from wall
-                Vector2 wallJumpDirection = new Vector2(-wallDirection, 1).normalized;
-                rb.linearVelocity = Vector2.zero; // Reset velocity for consistent wall jumps
-                rb.AddForce(wallJumpDirection * wallJumpForce, ForceMode2D.Impulse);
-                isWallSliding = false;
-            }
+            rb.AddForce(Vector2.up * jumpForce, ForceMode2D.Impulse);
+            isGrounded = false;
         }
     }
 
