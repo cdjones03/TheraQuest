@@ -263,6 +263,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814737428}
     m_Modifications:
+    - target: {fileID: 343662664239114251, guid: 25b8d391622d37e4799847407a556be8, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 1612203967156661656, guid: 25b8d391622d37e4799847407a556be8, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25117174
@@ -351,6 +355,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814737428}
     m_Modifications:
+    - target: {fileID: 3223651426184781295, guid: 827b4734cf719a64f9c5945a9182e444, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 6161310498581602225, guid: 827b4734cf719a64f9c5945a9182e444, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25117174
@@ -2348,6 +2356,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814737428}
     m_Modifications:
+    - target: {fileID: 582671661481603076, guid: 4aedd925db430c94bb4e6b0dfd6a9107, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 4709237603499335351, guid: 4aedd925db430c94bb4e6b0dfd6a9107, type: 3}
       propertyPath: m_Name
       value: room1_0
@@ -6014,6 +6026,10 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4017392900598307532, guid: 4303cb8acf732a040813671fa57fc72f, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -8214,6 +8230,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 814737428}
     m_Modifications:
+    - target: {fileID: 66567002188267157, guid: 0ca4c88edcb462a4db7428dc205d9931, type: 3}
+      propertyPath: m_TagString
+      value: Door
+      objectReference: {fileID: 0}
     - target: {fileID: 2030758649986611902, guid: 0ca4c88edcb462a4db7428dc205d9931, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.25117174
