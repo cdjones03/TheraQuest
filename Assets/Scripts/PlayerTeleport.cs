@@ -1,6 +1,5 @@
 
 using System;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -16,40 +15,39 @@ public class PlayerTeleport : MonoBehaviour
     private float playerY;
     private float therapistX;
     private float therapistY;
+    private Transform position;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         teleport = GameObject.FindGameObjectWithTag("Teleport");
+        
         theraSpawnPoint = new GameObject[5];
         therapyRooms = new GameObject[5];
+        
         GetComponent<Collider2D>().isTrigger = true;
+        
+        position = this.gameObject.transform;
         playerX = player.transform.position.x;
         playerY = player.transform.position.y;
         therapistX = 0;
         therapistY = 0;
     }
 
-    void Update()
-    {
-        
-    }
     void OnTriggerEnter2D(Collider2D other)
     {
         int rand = UnityEngine.Random.Range(0, 4);
-        
         // ReSharper disable once InvertIf
         if (other.gameObject.CompareTag("Player"))
         {
-            therapistX = transform.position.x;
-            therapistY = transform.position.y;
             playerX = player.transform.position.x;
             playerY = player.transform.position.y;
             player.transform.position = theraSpawnPoint[rand].transform.position;
             Debug.Log("firing teleport");
+            //do we want destroy.gameobject here?
         }
 
-        if (other.gameObject.CompareTag("Door"))
+        if (Input.GetKeyDown(KeyCode.E))
         {
             Reset(true);
         }
@@ -57,6 +55,7 @@ public class PlayerTeleport : MonoBehaviour
 
     void Reset(bool reset)
     {
-        player.transform.position = new Vector2(therapistX, therapistY);
+        throw new NotImplementedException();
+        //go to most recent pill location -- https://www.gamedeveloper.com/programming/unity---creating-a-checkpoints-system??
     }
 }

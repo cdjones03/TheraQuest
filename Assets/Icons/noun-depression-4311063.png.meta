@@ -154,12 +154,12 @@ TextureImporter:
       name: noun-depression-4311063_0
       rect:
         serializedVersion: 2
-        x: 304
-        y: 473
-        width: 264
-        height: 213
+        x: 124
+        y: 107
+        width: 444
+        height: 579
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -172,99 +172,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: noun-depression-4311063_1
-      rect:
-        serializedVersion: 2
-        x: 182
-        y: 251
-        width: 173
-        height: 198
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 4ab34943918b707a0800000000000000
-      internalID: -6410953126142788700
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noun-depression-4311063_2
-      rect:
-        serializedVersion: 2
-        x: 376
-        y: 385
-        width: 36
-        height: 36
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: ab413bbafa2cc6d60800000000000000
-      internalID: 7884891107374601402
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noun-depression-4311063_3
-      rect:
-        serializedVersion: 2
-        x: 411
-        y: 420
-        width: 45
-        height: 45
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: f78280ee8e85a2b50800000000000000
-      internalID: 6569160763922458751
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: noun-depression-4311063_4
-      rect:
-        serializedVersion: 2
-        x: 133
-        y: 114
-        width: 272
-        height: 147
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 3a98e56b1e772fe00800000000000000
-      internalID: 1077055072205965731
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: ef66f060a878b6f4ea1b01250b676494
     internalID: 0
     vertices: []
     indices: 
@@ -273,7 +185,13 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      noun-depression-4311063_0: 1616933126472708466
+      noun-depression-4311063_1: -6410953126142788700
+      noun-depression-4311063_2: 7884891107374601402
+      noun-depression-4311063_3: 6569160763922458751
+      noun-depression-4311063_4: 1077055072205965731
+      noun-depression-4311063_5: -415772238
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

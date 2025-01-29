@@ -147,10 +147,10 @@ TextureImporter:
         serializedVersion: 2
         x: 104
         y: 124
-        width: 223
-        height: 259
+        width: 499
+        height: 557
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
@@ -163,33 +163,11 @@ TextureImporter:
       indices: 
       edges: []
       weights: []
-    - serializedVersion: 2
-      name: noun-insurance-7503393_1
-      rect:
-        serializedVersion: 2
-        x: 223
-        y: 170
-        width: 373
-        height: 506
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 8ada65e6d3fde7ec0800000000000000
-      internalID: -3567168399893680728
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
     outline: []
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 12f65ce98e4f4834b93717e36820d742
     internalID: 0
     vertices: []
     indices: 
@@ -198,7 +176,9 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      noun-insurance-7503393_0: 7562896938815748449
+      noun-insurance-7503393_1: -3567168399893680728
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

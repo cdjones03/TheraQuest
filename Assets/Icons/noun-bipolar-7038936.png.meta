@@ -248,7 +248,11 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      noun-bipolar-7038936_0: -7731013763450577537
+      noun-bipolar-7038936_1: -5410492019180691206
+      noun-bipolar-7038936_2: -616800391950928243
+      noun-bipolar-7038936_3: -2327971933309443505
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
