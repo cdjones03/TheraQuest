@@ -40,6 +40,8 @@ public class PlayerTeleport : MonoBehaviour
         // ReSharper disable once InvertIf
         if (other.gameObject.CompareTag("Player"))
         {
+            therapistX = transform.position.x;
+            therapistY = transform.position.y;
             playerX = player.transform.position.x;
             playerY = player.transform.position.y;
             player.transform.position = theraSpawnPoint[rand].transform.position;
@@ -47,7 +49,7 @@ public class PlayerTeleport : MonoBehaviour
             //do we want destroy.gameobject here?
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (other.gameObject.CompareTag("Door"))
         {
             Reset(true);
         }
@@ -55,7 +57,7 @@ public class PlayerTeleport : MonoBehaviour
 
     void Reset(bool reset)
     {
-        throw new NotImplementedException();
+        player.transform.position = new Vector2(therapistX, therapistY);
         //go to most recent pill location -- https://www.gamedeveloper.com/programming/unity---creating-a-checkpoints-system??
     }
 }
