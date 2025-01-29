@@ -1,5 +1,6 @@
 
 using System;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
@@ -31,21 +32,24 @@ public class PlayerTeleport : MonoBehaviour
 
     void Update()
     {
-
+        
     }
     void OnTriggerEnter2D(Collider2D other)
     {
         int rand = UnityEngine.Random.Range(0, 4);
+        
         // ReSharper disable once InvertIf
         if (other.gameObject.CompareTag("Player"))
         {
+            therapistX = transform.position.x;
+            therapistY = transform.position.y;
             playerX = player.transform.position.x;
             playerY = player.transform.position.y;
             player.transform.position = theraSpawnPoint[rand].transform.position;
             Debug.Log("firing teleport");
         }
 
-        if (Input.GetKeyDown(KeyCode.E))
+        if (other.gameObject.CompareTag("Door"))
         {
             Reset(true);
         }
@@ -53,6 +57,6 @@ public class PlayerTeleport : MonoBehaviour
 
     void Reset(bool reset)
     {
-        throw new NotImplementedException();
+        player.transform.position = new Vector2(therapistX, therapistY);
     }
 }
