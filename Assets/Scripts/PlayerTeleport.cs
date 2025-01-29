@@ -10,7 +10,7 @@ public class PlayerTeleport : MonoBehaviour
     [SerializeField] private GameObject player;
     [SerializeField] private GameObject[] theraSpawnPoint;
     [SerializeField] private GameObject[] therapyRooms;
-    [SerializeField] private GameObject teleport;
+    //[SerializeField] private GameObject teleport;
     
     private float playerX;
     private float playerY;
@@ -23,7 +23,7 @@ public class PlayerTeleport : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        teleport = GameObject.FindGameObjectWithTag("Teleport");
+        //teleport = GameObject.FindGameObjectWithTag("Teleport");
         
         theraSpawnPoint = new GameObject[5];
         therapyRooms = new GameObject[5];
