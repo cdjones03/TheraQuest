@@ -3,9 +3,11 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
+using TMPro;
+
 public class TherapyCountUI : MonoBehaviour
 {
-    Text counterText;
+    TextMeshProUGUI counterText;
     [SerializeField] public GameObject pillOne;
     [SerializeField] public GameObject pillTwo;
     [SerializeField] public GameObject pillThree;
@@ -14,7 +16,7 @@ public class TherapyCountUI : MonoBehaviour
 
     void Start()
     {
-        counterText = GetComponent<Text>();
+        counterText = GetComponent<TextMeshProUGUI>();
         pillOne.SetActive(false);
         pillTwo.SetActive(false);
         pillThree.SetActive(false);

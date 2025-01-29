@@ -24,8 +24,8 @@ public class CameraController : MonoBehaviour
         if (player != null)
         {
             // Create target position with clamped X and player's Y
-            float clampedX = Mathf.Clamp(player.position.x, MIN_X, MAX_X);
-            Vector3 targetPosition = new Vector3(clampedX, player.position.y, transform.position.z);
+            //float clampedX = Mathf.Clamp(player.position.x, MIN_X, MAX_X);
+            Vector3 targetPosition = new Vector3(player.position.x, player.position.y, transform.position.z);
             
             // Smoothly interpolate between current position and target position
             transform.position = Vector3.Lerp(transform.position, targetPosition, smoothSpeed * Time.deltaTime);

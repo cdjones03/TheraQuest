@@ -9,10 +9,10 @@ public class UpdateUI : MonoBehaviour
     [SerializeField] public GameObject heart;
     [SerializeField] public GameObject player;
     
-    TextMeshPro moodText;
-    TextMeshPro coinText;
-    Animator animator;
-    PlayerManager manager;
+    public TextMeshProUGUI moodText;
+    public TextMeshProUGUI coinText;
+    public Animator animator;
+    public PlayerManager manager;
 
 # region Animation Variables
     public int stableThreshold = 85;
@@ -23,17 +23,26 @@ public class UpdateUI : MonoBehaviour
  // this is a duplicate of the first few lines of update because unity would throw a fit otherwise
     private void Awake()
     {
-        coinText.text = manager.curCoins.ToString();
-        moodText.text = manager.curMoodValue.ToString();
-        animator.SetFloat("mood", manager.curMoodValue);
+        
+        //coinText.text = manager.curCoins.ToString();
+        //moodText.text = manager.curMoodValue.ToString();
+        //animator.SetFloat("mood", manager.curMoodValue);
+        
     }
     void Start()
     {
-        moodText = moodUI.GetComponent<TextMeshPro>();
-        coinText = coinUI.GetComponent<TextMeshPro>();
-        animator = heart.GetComponent<Animator>();
-        //manager = FindFirstObjectByType<PlayerManager>();
         manager = player.GetComponent<PlayerManager>();
+        //moodText = moodUI.GetComponent<TextMeshProUGUI>();
+        //coinText = coinUI.GetComponent<TextMeshProUGUI>();
+        animator = heart.GetComponent<Animator>();
+
+        coinText.text = manager.curCoins.ToString();
+        moodText.text = manager.curMoodValue.ToString();
+        animator.SetFloat("mood", manager.curMoodValue);
+
+        
+        //manager = FindFirstObjectByType<PlayerManager>();
+        
 
         //coinText.text = manager.curCoins.ToString();
         //moodText.text = manager.curMoodValue.ToString();

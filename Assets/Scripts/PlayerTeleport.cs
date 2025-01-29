@@ -18,15 +18,15 @@ public class PlayerTeleport : MonoBehaviour
     private float therapistY;
     private Transform pillPosition;
 
-    public int roomOrder = 0;
+    public static int roomOrder = 0;
 
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
         //teleport = GameObject.FindGameObjectWithTag("Teleport");
         
-        theraSpawnPoint = new GameObject[5];
-        therapyRooms = new GameObject[5];
+        //theraSpawnPoint = new GameObject[5];
+        //therapyRooms = new GameObject[5];
         
         GetComponent<Collider2D>().isTrigger = true;
         
@@ -66,16 +66,24 @@ public class PlayerTeleport : MonoBehaviour
             //but since the value is randomized, it should still work without duplicates
             player.transform.position = theraSpawnPoint[roomOrder].transform.position;
             Debug.Log("firing teleport");
+
+            player.GetComponent<PlayerManager>().SetLastPosition(transform.position);
+            roomOrder += 1;
+            Destroy(gameObject);
         }
 
+
+        /*
         // would we need a script on the player for this...?? 
         if (other.gameObject.CompareTag("Door"))
         {
+            Debug.Log("firing door");
             Reset(true);
             player.transform.position = pillPosition.transform.position;
             roomOrder += 1;
             Destroy(this);
         }
+        */
     }
 
     void Reset(bool reset)

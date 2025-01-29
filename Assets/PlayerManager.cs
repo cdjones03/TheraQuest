@@ -12,6 +12,8 @@ public class PlayerManager : MonoBehaviour
     private float moodTimer = 0f;
     private float moodDecreaseInterval = 10f;
 
+    public Vector3 lastPosition;
+
     //UpdateUI updateUI;
 
     void Start()
@@ -52,5 +54,19 @@ public class PlayerManager : MonoBehaviour
     {
         curCoins ++;
         //updateUI.coinText.text = curCoins.ToString();         // Update UI
+    }
+
+    public void SetLastPosition(Vector3 position)
+    {
+        lastPosition = position;
+    }
+
+     void OnTriggerEnter2D(Collider2D other)
+    {
+        // would we need a script on the player for this...?? 
+        if (other.gameObject.CompareTag("Door"))
+        {
+            transform.position = lastPosition;
+        }
     }
 }
