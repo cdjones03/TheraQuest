@@ -6,7 +6,7 @@ public static class SceneLoader
     public static class SceneNames
     {
         public const string StartMenu = "StartMenu";
-        public const string GameScene = "GameScene";
+        public const string GameScene = "GameSceneME";
         public const string EndMenu = "EndMenu";
     }
 
