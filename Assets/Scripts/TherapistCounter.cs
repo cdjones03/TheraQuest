@@ -35,6 +35,7 @@ public class TherapistCounter : MonoBehaviour
             //Add visit to counter
             totalVisits++;
             Debug.Log("You have seen " + TherapistCounter.totalVisits + " providers.");
+            player.GetComponent<PlayerManager>().AddMood(10);
             ui.UpdateText(); 
             Loading();
         }

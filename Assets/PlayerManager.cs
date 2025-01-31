@@ -1,6 +1,7 @@
 using UnityEngine;
 using TMPro;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class PlayerManager : MonoBehaviour
 {
@@ -10,7 +11,9 @@ public class PlayerManager : MonoBehaviour
     public int maxMoodValue = 100;
 
     private float moodTimer = 0f;
-    private float moodDecreaseInterval = 10f;
+    private float moodDecreaseInterval = 2f;
+    private float coinTimer = 0f;
+    private float coinAddInterval = 10f;
 
     public Vector3 lastPosition;
 
@@ -34,6 +37,22 @@ public class PlayerManager : MonoBehaviour
             AddMood(-1);                                        // Decrease mood by 1
             //updateUI.moodText.text = curMoodValue.ToString(); // Update UI
         }
+
+        if(curMoodValue <= 0)
+        {
+            Debug.Log("You have no mood left. You are dead.");
+        }
+
+        // Handle coin add timer
+        coinTimer += Time.deltaTime;
+        if (coinTimer >= coinAddInterval)
+        {
+            coinTimer = 0f;
+            AddCoin();
+            Debug.Log($"Added coin from timer. Total coins: {curCoins}");
+            
+        }
+
     }
 
     public void AddMood(int amount)
