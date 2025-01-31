@@ -50,8 +50,9 @@ public class PlayerManager : MonoBehaviour
             coinTimer = 0f;
             AddCoin();
             Debug.Log($"Added coin from timer. Total coins: {curCoins}");
-            SceneManager.LoadScene("EndMenu");
+            
         }
+
     }
 
     public void AddMood(int amount)
