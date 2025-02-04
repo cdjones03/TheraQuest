@@ -25,7 +25,7 @@ public class DynamicTextCollider : MonoBehaviour
         UpdateColliderSize();
     }
 
-    private void UpdateColliderSize()
+    public void UpdateColliderSize()
     {
         if (boxCollider == null || inputField == null) return;
         boxCollider.enabled = true;

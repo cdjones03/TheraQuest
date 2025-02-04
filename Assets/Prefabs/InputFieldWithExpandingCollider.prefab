@@ -145,10 +145,10 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3246362678332321898}
+  - component: {fileID: 5966707267098997903}
   - component: {fileID: 1186351874369942062}
   - component: {fileID: 4906143592529375570}
   - component: {fileID: 2860004431545512250}
-  - component: {fileID: 5966707267098997903}
   - component: {fileID: 6884660692917750086}
   m_Layer: 5
   m_Name: InputFieldWithExpandingCollider
@@ -177,6 +177,21 @@ RectTransform:
   m_AnchoredPosition: {x: 6.23, y: 16.54}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5966707267098997903
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4267341665780744238}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9b26fc69dc40444dbb15f1be183bf38c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  horizontalPadding: 10
+  leftOffset: -70
+  fixedHeight: 50
 --- !u!222 &1186351874369942062
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -294,7 +309,19 @@ MonoBehaviour:
       m_Calls: []
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 5966707267098997903}
+        m_TargetAssemblyTypeName: DynamicTextCollider, Assembly-CSharp
+        m_MethodName: UpdateColliderSize
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   m_OnTouchScreenKeyboardStatusChanged:
     m_PersistentCalls:
       m_Calls: []
@@ -316,21 +343,6 @@ MonoBehaviour:
   isAlert: 0
   m_InputValidator: {fileID: 0}
   m_ShouldActivateOnSelect: 1
---- !u!114 &5966707267098997903
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4267341665780744238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9b26fc69dc40444dbb15f1be183bf38c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  horizontalPadding: 10
-  leftOffset: -70
-  fixedHeight: 50
 --- !u!61 &6884660692917750086
 BoxCollider2D:
   m_ObjectHideFlags: 0
