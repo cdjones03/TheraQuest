@@ -118,6 +118,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d50c6af235894f94f8ca8f132fc3076e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
+  copayValue: 0
   ui: {fileID: 0}
 --- !u!61 &911512017336868375
 BoxCollider2D:
@@ -190,4 +192,4 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  teleport: {fileID: 0}
+  copayValue: 0

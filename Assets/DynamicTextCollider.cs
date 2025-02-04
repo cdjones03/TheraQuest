@@ -16,6 +16,7 @@ public class DynamicTextCollider : MonoBehaviour
     {
         boxCollider = GetComponent<BoxCollider2D>();
         inputField = GetComponent<TMP_InputField>();
+        boxCollider.enabled = false;
 
         // Set up listener for text changes
         inputField.onValueChanged.AddListener((_) => UpdateColliderSize());
@@ -27,6 +28,7 @@ public class DynamicTextCollider : MonoBehaviour
     private void UpdateColliderSize()
     {
         if (boxCollider == null || inputField == null) return;
+        boxCollider.enabled = true;
 
         // Get the preferred width of the text
         float textWidth = inputField.textComponent.GetPreferredValues().x;
