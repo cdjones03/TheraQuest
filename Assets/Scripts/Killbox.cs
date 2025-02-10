@@ -7,7 +7,7 @@ public class Killbox : MonoBehaviour
     {
         if (collision.gameObject.tag == "Player")
         {
-            SceneManager.LoadScene(1);
+            collision.gameObject.GetComponent<PlayerManager>().goToLastPosition();
         }
     }
 }

@@ -91,6 +91,10 @@ public class PlayerManager : MonoBehaviour
         lastPosition = position;
     }
 
+    public void goToLastPosition(){
+        transform.position = lastPosition;
+    }
+
     public int getCurCoins()
     {
         return curCoins;
