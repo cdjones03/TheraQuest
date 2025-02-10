@@ -9,8 +9,9 @@ public class TherapistCounter : MonoBehaviour
     //static = accessible from any script)
     public static int totalVisits = 0;
 
-    public int copayValue;
     public TherapyCountUI ui;
+
+    [SerializeField] private int moodBoost = 30;
 
     void Awake()
     {
@@ -22,7 +23,6 @@ public class TherapistCounter : MonoBehaviour
     void Start()
     {
         player = GameObject.FindGameObjectWithTag("Player");
-        copayValue = 3;
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -30,12 +30,12 @@ public class TherapistCounter : MonoBehaviour
         int curCoins = player.GetComponent<PlayerManager>().getCurCoins();
 
         //Destroy the coin if Object tagged Player comes in contact with it
-        if (other.CompareTag("Player") && curCoins >= copayValue)
+        if (other.CompareTag("Player") && curCoins >= PlayerTeleport.copayValue)
         {
             //Add visit to counter
             totalVisits++;
             Debug.Log("You have seen " + TherapistCounter.totalVisits + " providers.");
-            player.GetComponent<PlayerManager>().AddMood(10);
+            player.GetComponent<PlayerManager>().AddMood(moodBoost);
             ui.UpdateText(); 
             Loading();
         }

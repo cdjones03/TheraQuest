@@ -15,8 +15,11 @@ EditorBuildSettings:
     path: Assets/Scenes/GameSceneME.unity
     guid: 3fb490529f43f4af5a00735c1c861d0c
   - enabled: 1
-    path: Assets/Scenes/EndMenu.unity
+    path: Assets/Scenes/EndMenuLose.unity
     guid: ae15b472d1851402dab67e22e81f5575
+  - enabled: 1
+    path: Assets/Scenes/EndMenuWin.unity
+    guid: 01b822b30fe4242e1b7d0b44e398518e
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0

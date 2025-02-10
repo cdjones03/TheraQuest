@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class SceneManagerBridge : MonoBehaviour
 {
+
+    void Update(){
+        if(Input.GetKeyDown(KeyCode.Escape)){
+            Application.Quit();
+        }
+    }
      public void LoadNextScene()
     {
         SceneLoader.LoadNextScene();

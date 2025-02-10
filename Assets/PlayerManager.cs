@@ -41,6 +41,7 @@ public class PlayerManager : MonoBehaviour
         if(curMoodValue <= 0)
         {
             Debug.Log("You have no mood left. You are dead.");
+            SceneManager.LoadScene("EndMenuLose");
         }
 
         // Handle coin add timer
@@ -51,6 +52,11 @@ public class PlayerManager : MonoBehaviour
             AddCoin();
             Debug.Log($"Added coin from timer. Total coins: {curCoins}");
             
+        }
+
+        if(Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
         }
 
     }
@@ -95,6 +101,9 @@ public class PlayerManager : MonoBehaviour
         // would we need a script on the player for this...?? 
         if (other.gameObject.CompareTag("Door"))
         {
+            if(PlayerTeleport.copayValue > 15){
+                SceneManager.LoadScene("EndMenuWin");
+            }
             transform.position = lastPosition;
         }
     }

@@ -4,6 +4,9 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UIElements;
 using Random = UnityEngine.Random;
+using TMPro;
+using System.Text.RegularExpressions;
+
 
 public class PlayerTeleport : MonoBehaviour
 {
@@ -20,7 +23,10 @@ public class PlayerTeleport : MonoBehaviour
 
     public static int roomOrder = 0;
 
-    public int copayValue;
+    public static int copayValue;
+
+    public TextMeshProUGUI copayCostText;
+    public GameObject copayCostCoinUI;
 
     void Start()
     {
@@ -39,8 +45,17 @@ public class PlayerTeleport : MonoBehaviour
         therapistY = 0;
 
         copayValue = 3;
+        
+        copayCostText.text = copayValue.ToString();
+        copayCostCoinUI.SetActive(true);
 
         reshuffle(therapyRooms);
+    }
+
+    void Update(){
+        if(int.Parse(copayCostText.text) != copayValue){
+            copayCostText.text = copayValue.ToString();
+        }
     }
 
     void reshuffle(GameObject[] rooms)
@@ -75,6 +90,12 @@ public class PlayerTeleport : MonoBehaviour
             Debug.Log("firing teleport");
 
             player.GetComponent<PlayerManager>().SetLastPosition(transform.position);
+
+            copayValue += 3;
+
+            copayCostCoinUI.SetActive(false);
+            copayCostText.gameObject.SetActive(false);
+
             roomOrder += 1;
             Destroy(gameObject);
         }

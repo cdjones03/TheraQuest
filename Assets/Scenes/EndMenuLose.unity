@@ -735,7 +735,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 978636946}
         m_TargetAssemblyTypeName: SceneManagerBridge, Assembly-CSharp
-        m_MethodName: LoadNextScene
+        m_MethodName: LoadStartMenu
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
